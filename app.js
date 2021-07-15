@@ -147,7 +147,7 @@ function updateEmployee(){
                 }
             ])
             .then(answer=>{
-                connection.query(`UPDATE employee WHERE ?`,[{manager_id:answer.employee},{role_id:answer.role}],
+                connection.query(`UPDATE employee SET ? WHERE ?`,[{manager_id:answer.employee},{role_id:answer.role}],
                 err=>{
                     if (err) throw err;
                     console.log("Employee role updated!")
